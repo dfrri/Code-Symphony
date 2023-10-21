@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="这里是代码之韵网络科技工作室，本工作室主要从事IT行业的工作，我们提供软件开发和工程，网站设计和搭建，硬件，网络通信，网络和信息安全，数据分析和大数据，人工智能和机器学习，游戏开发，it咨询和服务等一系列技术支持。如果您需要其中某项技术支持，欢迎详细咨询。">
+    <meta name="keywords" content="代码之韵, CODE_SYMPHONY, IT, 工作室, 软件开发, 网站搭建, 人工智能, 互联网, 游戏开发, 网络信息, 硬件">
+    <meta name="author" content="PlaidMrdeer">
+    <link rel="icon" href="image/favicon.png">
+
+    <title>CODE SYMPHONY | 代码之韵</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            transition: background-color 1s;
+        }
+
+        #loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            transition: opacity 1s;
+        }
+
+        #loader_text {
+            color: white;
+            margin-top: 10px;
+            transition: opacity 1s;
+        }
+
+        #main_img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader-container">
+        <div id="loader"></div>
+        <div id="loader_text">正在加载页面，请稍等</div>
+    </div>
+
+    <script id="loader_js" type="text/javascript">
+        window.addEventListener("load", function() {
+            document.body.style.backgroundColor = "white";
+            document.getElementById("loader").classList.add("hidden");
+
+            setTimeout(function () {
+                var element = document.getElementById("loader-container");
+                if (element) {
+                    element.remove();
+                }
+
+                element = document.getElementById("loader_js");
+                if (element) {
+                    element.remove();
+                }
+            }, 2000);
+        });
+    </script>
+
+
+
+
+    <img id="main_img" src="image/favicon.png">
+</body>
+
+</html>
